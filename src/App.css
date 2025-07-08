@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Navbar text animation */
+@keyframes slideInLeftToRight {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  animation: slideInLeftToRight 1.5s ease-out;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
   color: white;
+  padding: 20px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
-@keyframes App-logo-spin {
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+.language-dropdown select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+.center-text {
+  position: relative;
+  z-index: 2;
+  font-size: 2rem;
+  max-width: 80%;
+  animation: fadeIn 1.5s ease-out;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔄 Responsive styles */
+@media (max-width: 768px) {
+  .navbar h1 {
+    font-size: 1.4rem;
+  }
+
+  .center-text {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .language-dropdown select {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h1 {
+    font-size: 1.2rem;
+  }
+
+  .center-text {
+    font-size: 1.2rem;
+  }
+
+  .language-dropdown select {
+    font-size: 0.8rem;
   }
 }
