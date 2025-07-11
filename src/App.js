@@ -16,6 +16,7 @@ function App() {
         backgroundImage: "url('/learn.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+     
         height: '100vh',
         position: 'relative',
         overflow: 'hidden',
@@ -26,6 +27,7 @@ function App() {
       {/* Navbar with translated title */}
       <div className="navbar">
         <h1>{t('home.title')}</h1>
+
       </div>
 
       {/* Language dropdown */}
@@ -39,9 +41,11 @@ function App() {
       </div>
 
       {/* Center text */}
-      <div className="center-text">
-        <p>{t('home.message')}</p>
-      </div>
+    <div className="center-text">
+  <p>{t('home.message')}</p>
+  <p>{t('home.paragraph')}</p> 
+</div>
+
     </div>
   );
 }

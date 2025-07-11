@@ -82,7 +82,18 @@ body, html {
   max-width: 80%;
   animation: fadeIn 1.5s ease-out;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+
+
 }
+.center-text p {
+  margin-bottom: 1rem;
+}
+
+.center-text p:last-child {
+  font-size: 1.3rem;
+  color: #eee;
+}
+
 
 @keyframes fadeIn {
   from {
